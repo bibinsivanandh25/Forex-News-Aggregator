@@ -1,17 +1,20 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 export const fetchForxNews = async (query) => {
+  const searchQuery = query || 'forex';
+
   try {
-    const { data } = await axios.get(import.meta.env.VITE_BASE_URL, {
+    const { data } = await axios.get(BASE_URL, {
       params: {
-        q: query || 'forex',
+        query: searchQuery,
         language: 'en',
-        apiKey: import.meta.env.VITE_API_KEY,
       },
     });
-    return data.articles;
+    return data.articles || [];
   } catch (error) {
-    console.log('Error fetching news:', error);
+    console.error('Error fetching news:', error);
     return [];
   }
 };
