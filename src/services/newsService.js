@@ -14,7 +14,10 @@ export const fetchForxNews = async (query) => {
     });
     return data.articles || [];
   } catch (error) {
-    console.error('Error fetching news:', error);
+    console.error(
+      'Error fetching news:',
+      error.response ? error.response.data : error.message
+    );
     return [];
   }
 };
