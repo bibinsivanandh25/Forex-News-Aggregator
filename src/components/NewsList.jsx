@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { fetchForxNews } from '../services/NewsService';
 import NewsItem from './NewsItem';
+import { fetchForxNews } from '../services/newsService';
 
 const NewsList = ({ query }) => {
   const [articles, setArticles] = useState([]);
