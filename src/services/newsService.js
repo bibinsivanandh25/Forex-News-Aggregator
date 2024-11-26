@@ -3,7 +3,7 @@ import axios from 'axios';
 // axios.defaults.withCredentials = true;
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-// const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const fetchForxNews = async (query) => {
   const searchQuery = query || 'forex';
@@ -12,7 +12,7 @@ export const fetchForxNews = async (query) => {
     const { data } = await axios.get(BASE_URL, {
       params: {
         q: searchQuery,
-        // apiKey: API_KEY,
+        apiKey: API_KEY,
         language: 'en',
       },
     });
