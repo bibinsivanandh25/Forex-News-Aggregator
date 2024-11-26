@@ -17,7 +17,7 @@ const MediaUploader = ({ onUpload }) => {
     <div className="border p-4 border-dashed border-[#0d8b8b] rounded-lg text-center">
       <input
         type="file"
-        accept="image/* video/*"
+        accept="image/*, video/*"
         id="media-upload"
         className="hidden"
         onChange={handleFileChange}
