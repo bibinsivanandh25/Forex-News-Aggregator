@@ -11,7 +11,7 @@ export const fetchForxNews = async (query) => {
   try {
     const { data } = await axios.get(BASE_URL, {
       params: {
-        query: searchQuery,
+        q: searchQuery,
         // apiKey: API_KEY,
         language: 'en',
       },
